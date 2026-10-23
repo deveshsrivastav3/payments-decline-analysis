@@ -2,6 +2,18 @@
 
 A three-page report on `data/transactions.csv` and `output/impact_sizing.csv`. Every page carries a "Synthetic data, illustrative" note, because the data is generated (see the main README).
 
+## The finished report
+
+Built in Power BI (web) on the semantic model from this kit; every number in the reconciliation table below was checked against the report where it is shown. The web version cannot export a `.pbix`, so the pages are shown as images.
+
+![Page 1: Is there a problem?](dashboard-page-1.png)
+![Page 2: Where and why?](dashboard-page-2.png)
+![Page 3: What should we do, and what is it worth?](dashboard-page-3.png)
+
+The built report is slightly simpler than the page plan below: no slicers, and the issuer-unavailable line on page 2 is for all providers combined (Beta's July spike shows on the page 1 provider line instead).
+
+## Rebuilding it yourself
+
 Power BI Desktop is free but runs on Windows only. On an Apple-silicon Mac that means a Windows 11 ARM virtual machine (UTM or Parallels; check each one's current Windows licensing terms) or a Windows PC. Power BI on the web needs a work or school account, so it is not an option with a personal Gmail address.
 
 ## Build order
@@ -52,7 +64,7 @@ Power BI Desktop is free but runs on Windows only. On an Apple-silicon Mac that 
 
 Known small difference: Q8 books a recovery in the month of the original decline, while `Recovered value EUR` books it in the month of the retry. A retry can land up to an hour after midnight on the first of a month, so a single month can differ slightly. The full-year totals match.
 
-I wrote the DAX and checked it by reading, but I could not run Power BI here. The reconciliation table is how you find out whether each measure is right.
+The measures were run in Power BI and reconciled to the SQL results above; the table is the check to repeat if you rebuild it.
 
 ## How to talk about it in an interview
 
