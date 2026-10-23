@@ -98,7 +98,7 @@ python3 significance_tests.py   # tests and screen -> output/significance_tests.
 
 ## Dashboard
 
-A three-page Tableau dashboard (Is there a problem? Where and why? What is it worth?) built on the same data, with every number reconciled to the SQL results above. Workbook: [`tableau/payments-dashboard.twbx`](tableau/payments-dashboard.twbx). Build notes and the calculated fields are in [`tableau/`](tableau/); a Power BI version of the same three pages is specified in [`powerbi/`](powerbi/) but has not been built.
+A three-page Tableau dashboard (Is there a problem? Where and why? What is it worth?) built on the same data, with every number reconciled to the SQL results above. Workbook: [`tableau/payments-dashboard.twbx`](tableau/payments-dashboard.twbx). Build notes and the calculated fields are in [`tableau/`](tableau/); a Power BI version of the same three pages is in [`powerbi/`](powerbi/), with screenshots and the DAX measures (built in Power BI on the web, so no `.pbix`).
 
 **Page 1: Is there a problem?** Headline numbers (88.34% approval on 88,000 first attempts, EUR 806,797 declined, 5.78% of that value recovered by retries), approval by month and provider, and by payment method.
 
