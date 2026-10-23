@@ -1,0 +1,6 @@
+decline_code,retried,recovered,recovery_pct
+issuer_unavailable,228,131,57.46
+timeout,156,89,57.05
+invalid_cvv,219,123,56.16
+do_not_honor,570,201,35.26
+insufficient_funds,1146,180,15.71

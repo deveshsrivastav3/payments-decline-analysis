@@ -1,0 +1,3 @@
+band,required,frictionless,challenge_passed,challenge_failed,challenge_fail_rate_pct,end_to_end_approval_pct
+< EUR 200,38022,24664,11031,2327,17.42,83.17
+>= EUR 200,3010,1382,1154,474,29.12,75.02

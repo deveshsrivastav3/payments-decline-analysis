@@ -1,0 +1,75 @@
+// DAX for the dashboard. Create the Date table and the two calculated columns first,
+// then add each measure to the "transactions" table (New measure).
+// Every measure below is checked against the SQL results in powerbi/README.md (reconciliation table).
+
+// ---------------------------------------------------------------- date table
+// Modeling > New table. Then relate Date[Date] to transactions[date] (one to many) and
+// Table tools > Mark as date table.
+Date =
+ADDCOLUMNS (
+    CALENDAR ( DATE ( 2025, 1, 1 ), DATE ( 2025, 12, 31 ) ),
+    "Month", DATE ( YEAR ( [Date] ), MONTH ( [Date] ), 1 ),
+    "Month label", FORMAT ( [Date], "mmm yyyy" )
+)
+
+// Set Date[Month label] > Sort by column > Date[Month] so months run Jan to Dec.
+
+// ---------------------------------------------------------------- calculated columns on transactions
+Amount band = IF ( transactions[amount_eur] >= 200, ">= EUR 200", "< EUR 200" )
+
+Currency group = IF ( transactions[currency] = "EUR", "EUR", "non-EUR" )
+
+// ---------------------------------------------------------------- volume and approval (first attempts only)
+First attempts =
+CALCULATE ( COUNTROWS ( transactions ), transactions[is_retry] = 0 )
+
+Approved first attempts =
+CALCULATE ( COUNTROWS ( transactions ), transactions[is_retry] = 0, transactions[status] = "approved" )
+
+Auth rate % = DIVIDE ( [Approved first attempts], [First attempts] )
+
+Auth rate prev month % =
+CALCULATE ( [Auth rate %], PREVIOUSMONTH ( 'Date'[Date] ) )
+
+Auth rate change vs prev month (pts) = ( [Auth rate %] - [Auth rate prev month %] ) * 100
+
+// ---------------------------------------------------------------- money
+Requested value EUR =
+CALCULATE ( SUM ( transactions[amount_eur] ), transactions[is_retry] = 0 )
+
+Declined value EUR =
+CALCULATE ( SUM ( transactions[amount_eur] ), transactions[is_retry] = 0, transactions[status] = "declined" )
+
+Declined value % = DIVIDE ( [Declined value EUR], [Requested value EUR] )
+
+// A retry repeats the original amount, so an approved retry is a recovered payment.
+Recovered value EUR =
+CALCULATE ( SUM ( transactions[amount_eur] ), transactions[is_retry] = 1, transactions[status] = "approved" )
+
+Recovered % of declined value = DIVIDE ( [Recovered value EUR], [Declined value EUR] )
+
+// ---------------------------------------------------------------- why payments fail
+Declines =
+CALCULATE ( COUNTROWS ( transactions ), transactions[is_retry] = 0, transactions[status] = "declined" )
+
+Issuer unavailable % of attempts =
+DIVIDE (
+    CALCULATE ( COUNTROWS ( transactions ), transactions[is_retry] = 0, transactions[decline_code] = "issuer_unavailable" ),
+    [First attempts]
+)
+
+Challenged payments =
+CALCULATE (
+    COUNTROWS ( transactions ),
+    transactions[is_retry] = 0,
+    transactions[three_ds_outcome] IN { "challenge_passed", "challenge_failed" }
+)
+
+Challenge failure % =
+DIVIDE (
+    CALCULATE ( COUNTROWS ( transactions ), transactions[is_retry] = 0, transactions[three_ds_outcome] = "challenge_failed" ),
+    [Challenged payments]
+)
+
+// ---------------------------------------------------------------- impact page (table: impact_sizing)
+Addressable value EUR = SUM ( impact_sizing[addressable_value_eur] )

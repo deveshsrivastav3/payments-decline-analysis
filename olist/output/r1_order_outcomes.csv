@@ -1,0 +1,9 @@
+order_status,orders,share_pct,treatment
+delivered,96211,97.09,in scope
+shipped,1097,1.11,left out
+unavailable,602,0.61,left out
+canceled,580,0.59,in scope
+processing,299,0.3,left out
+invoiced,296,0.3,left out
+created,5,0.01,left out
+approved,2,0.0,left out

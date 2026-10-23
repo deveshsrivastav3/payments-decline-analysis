@@ -1,0 +1,10 @@
+decline_code,declines,share_pct,cumulative_pct,declined_value_eur
+insufficient_funds,2857,27.85,27.85,190766.0
+3ds_failed,2801,27.3,55.15,304296.0
+do_not_honor,1425,13.89,69.04,95398.0
+limit_exceeded,740,7.21,76.25,49300.0
+issuer_unavailable,616,6.0,82.25,41011.0
+invalid_cvv,556,5.42,87.67,36588.0
+expired_card,470,4.58,92.25,32941.0
+timeout,398,3.88,96.13,31044.0
+suspected_fraud,397,3.87,100.0,25453.0

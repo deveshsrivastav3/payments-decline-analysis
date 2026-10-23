@@ -1,0 +1,7 @@
+payment_group,period,orders,canceled,cancel_rate_pct
+boleto,Aug 2018,1125,6,0.53
+boleto,all other months,18107,86,0.47
+credit_card,Aug 2018,4807,24,0.5
+credit_card,all other months,67515,380,0.56
+voucher,Aug 2018,130,51,39.23
+voucher,all other months,1421,6,0.42

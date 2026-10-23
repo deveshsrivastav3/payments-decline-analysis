@@ -1,0 +1,18 @@
+area,rule,violations,result
+identifiers,duplicate transaction_id,0,pass
+completeness,null in a required column,0,pass
+validity,"amount outside 0 to 2,500 EUR",0,pass
+validity,timestamp outside 2025,0,pass
+validity,status not approved or declined,0,pass
+consistency,approved row carries a decline_code,0,pass
+consistency,declined row has no decline_code,0,pass
+consistency,is_retry flag disagrees with retry_of,0,pass
+referential,retry_of points to a missing transaction,0,pass
+referential,retry timestamp earlier than its original,0,pass
+referential,retry of an attempt that was approved,0,pass
+referential,"retry differs from original in customer, amount, provider or method",0,pass
+3-D Secure,3DS required on a non-card payment,0,pass
+3-D Secure,3DS outcome contradicts three_ds_required,0,pass
+3-D Secure,failed challenge on an approved payment,0,pass
+3-D Secure,3ds_failed code and challenge_failed outcome disagree,0,pass
+duplicates,"first attempts with same customer, amount and second",0,pass

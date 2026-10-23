@@ -1,0 +1,7 @@
+test,group_a,orders_a,canceled_a,rate_a_pct,group_b,orders_b,canceled_b,rate_b_pct,diff_pts,ci95_low,ci95_high,p_value,verdict
+"T1 boleto vs credit card, all months",boleto,19232,92,0.48,credit card,72322,404,0.56,-0.08,-0.19,0.04,0.1849783598239177,not distinguishable from noise
+"T2 voucher-only vs credit card, all months",voucher-only,1551,57,3.68,credit card,72322,404,0.56,3.12,2.29,4.17,1.1027431394887328e-26,distinguishable from noise
+"T3 voucher-only vs credit card, Aug 2018 removed",voucher-only,1421,6,0.42,credit card,67515,380,0.56,-0.14,-0.38,0.36,0.5917904303939404,not distinguishable from noise
+"T4 voucher-only, Aug 2018 vs other months","voucher-only, Aug 2018",130,51,39.23,"voucher-only, other months",1421,6,0.42,38.81,30.82,47.4,8.320450936065424e-53,distinguishable from noise
+"T5 credit card, 7+ installments vs 1",7+ installments,11639,75,0.64,1 installment,23243,126,0.54,0.1,-0.06,0.29,0.2310854117484891,not distinguishable from noise
+T6 order value 500+ BRL vs under 500,500 BRL and over,4109,51,1.24,under 500 BRL,92682,529,0.57,0.67,0.37,1.06,1.3184975876875085e-06,distinguishable from noise

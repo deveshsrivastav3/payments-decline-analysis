@@ -1,0 +1,6 @@
+payment_group,delivered_orders,median_days,mean_days
+debit_card,1481,8.4,10.8
+credit_card,71911,10.0,12.3
+voucher,1494,10.1,12.4
+mixed,2177,10.4,12.6
+boleto,19140,11.3,13.5

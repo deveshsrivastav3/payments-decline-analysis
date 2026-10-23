@@ -1,0 +1,7 @@
+payment_group,orders,canceled,cancel_rate_pct,avg_order_value_brl
+credit_card,72322,404,0.56,166.0
+boleto,19232,92,0.48,145.0
+mixed,2195,18,0.82,150.0
+voucher,1551,57,3.68,113.0
+debit_card,1489,7,0.47,142.0
+not_defined,2,2,100.0,0.0

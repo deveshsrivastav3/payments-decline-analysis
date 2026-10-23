@@ -1,0 +1,4 @@
+payment_method,attempts,approved,auth_rate_pct
+card,54689,45971,84.06
+ewallet,20175,19130,94.82
+bank_transfer,13136,12639,96.22

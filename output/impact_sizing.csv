@@ -1,0 +1,9 @@
+recommendation,scenario,assumption,addressable_value_eur,pct_of_declined_value,pct_of_requested_value
+1. Fix Gamma foreign-currency card routing,Low,Half of the approval gap to Alpha/Beta on the same traffic is closed,22900.0,2.84,0.389
+1. Fix Gamma foreign-currency card routing,High,The whole approval gap to Alpha/Beta on the same traffic is closed,45800.0,5.68,0.778
+2. Lower-friction 3DS for payments of EUR 200+,Low,Half of the challenge-failure gap to payments under EUR 200 is closed,32007.0,3.97,0.544
+2. Lower-friction 3DS for payments of EUR 200+,High,The whole challenge-failure gap to payments under EUR 200 is closed,64013.0,7.93,1.087
+3. Prompt retries after technical declines,Low,10 more points of customers retry; they recover at the rate of those who already retry,6180.0,0.77,0.105
+3. Prompt retries after technical declines,High,20 more points of customers retry; they recover at the rate of those who already retry,12360.0,1.53,0.21
+4. Alert on provider incidents (Beta July),Low,Incident is caught within 7 days instead of lasting the 31-day month,12852.0,1.59,0.218
+4. Alert on provider incidents (Beta July),High,Incident is caught within 3 days instead of lasting the 31-day month,14994.0,1.86,0.255

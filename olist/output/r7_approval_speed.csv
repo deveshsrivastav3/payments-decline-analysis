@@ -1,0 +1,6 @@
+payment_group,orders,median_hours,p90_hours,approved_within_1h_pct
+credit_card,72274,0.27,20.73,80.1
+mixed,2193,0.27,23.93,76.6
+voucher,1499,0.31,28.86,67.4
+debit_card,1489,0.84,24.01,53.9
+boleto,19206,29.06,67.19,3.0

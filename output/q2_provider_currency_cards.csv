@@ -1,0 +1,16 @@
+provider,currency,attempts,auth_rate_pct,provider_avg_pct,gap_vs_provider_avg
+Gamma,GBP,1727,73.54,79.59,-6.06
+Gamma,USD,1685,74.01,79.59,-5.59
+Gamma,IDR,906,74.06,79.59,-5.53
+Gamma,SGD,1131,74.27,79.59,-5.32
+Beta,SGD,1876,83.37,84.65,-1.28
+Alpha,USD,3903,85.24,85.59,-0.34
+Beta,USD,3122,84.37,84.65,-0.28
+Alpha,GBP,3963,85.42,85.59,-0.17
+Alpha,EUR,12270,85.58,85.59,-0.0
+Alpha,SGD,2467,85.69,85.59,0.11
+Beta,GBP,3046,84.8,84.65,0.15
+Beta,IDR,1544,84.84,84.65,0.19
+Beta,EUR,9533,84.92,84.65,0.27
+Alpha,IDR,2012,86.48,85.59,0.9
+Gamma,EUR,5504,85.21,79.59,5.62

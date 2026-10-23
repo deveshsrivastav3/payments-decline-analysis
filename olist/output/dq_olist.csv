@@ -1,0 +1,16 @@
+area,rule,violations,result,handling
+keys,duplicate order_id in orders,0,pass,none needed
+keys,duplicate customer_id in customers,0,pass,none needed
+keys,"duplicate (order_id, payment_sequential) in order_payments",0,pass,none needed
+referential,order without a customer row,0,pass,none needed
+referential,payment without an order,0,pass,none needed
+referential,order without any payment row,1,REVIEW,dropped: payment method unknown
+validity,payment_type = not_defined,3,REVIEW,"kept as its own group; too small to compare, left out of the tests"
+validity,payment_installments = 0,2,REVIEW,left out of the installment analysis
+validity,payment_value <= 0,9,REVIEW,"kept; order value uses the sum, so these barely move it"
+consistency,approved before it was purchased,0,pass,none needed
+consistency,delivered before it was purchased,0,pass,none needed
+consistency,delivered order with no delivery date,8,REVIEW,left out of delivery-time figures
+consistency,delivered order with no approval time,14,REVIEW,left out of approval-speed figures
+consistency,canceled order with a delivery date,6,REVIEW,kept as canceled; status is taken as the outcome
+coverage,purchases outside 2017-01 to 2018-08 (scope),349,REVIEW,"out of scope: sparse before 2017, cut off after Aug 2018"

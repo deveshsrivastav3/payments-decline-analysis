@@ -1,0 +1,8 @@
+test,metric,group_a,n_a,rate_a_pct,group_b,n_b,rate_b_pct,diff_pts,ci95_low,ci95_high,z,p_value,verdict
+S1 card vs e-wallet,approval rate,card,54689,84.06,e-wallet,20175,94.82,-10.76,-11.19,-10.33,-38.79,0.0,distinguishable from noise
+S2 Gamma non-EUR cards vs peers,approval rate,"Gamma, non-EUR cards",5449,73.92,"Alpha+Beta, non-EUR cards (excl. Beta July)",21118,85.37,-11.45,-12.71,-10.19,-20.06,1.5278608244035338e-89,distinguishable from noise
+S3 Beta July vs other months,approval rate,"Beta, July",2605,80.35,"Beta, other months",28129,89.21,-8.86,-10.43,-7.29,-13.54,9.045295600100893e-42,distinguishable from noise
+S3b Beta July issuer_unavailable share,share of attempts declined issuer_unavailable,"Beta, July",2605,3.15,"Beta, other months",28129,0.57,2.58,1.91,3.26,14.3,2.3017627790306443e-46,distinguishable from noise
+"S4 3DS challenge failure, large vs small",challenge failure rate,"challenged, >= EUR 200",1628,29.12,"challenged, < EUR 200",13358,17.42,11.7,9.4,13.99,11.43,3.021704133473305e-30,distinguishable from noise
+"S5 retry recovery, technical vs insufficient_funds",retry recovery rate,after technical declines,603,56.88,after insufficient_funds,1146,15.71,41.18,36.7,45.65,17.88,1.790272302782518e-71,distinguishable from noise
+C1 control: Alpha vs Beta non-EUR cards (no planted gap),approval rate,"Alpha, non-EUR cards",12345,85.59,"Beta, non-EUR cards (excl. July)",8773,85.06,0.53,-0.44,1.5,1.08,0.280250533095576,not distinguishable from noise
